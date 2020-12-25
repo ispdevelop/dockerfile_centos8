@@ -24,8 +24,14 @@ RUN yum update -y \
  	&& make prefix=/usr/local all \
  	&& make prefix=/usr/local install \
  	&& make clean \
- 	&& cd /root/tmp \
+	# gcc101
+	&& cd /root/tmp \
+	&& wget https://gcc-10-1-0.s3-ap-northeast-1.amazonaws.com/gcc_10_1_0_centos8.tar.gz \
+	&& tar zxvf gcc_10_1_0_centos8.tar.gz -C /usr/local \
+	&& ln -s /usr/local/gcc-10.1.0/bin/g++ /usr/local/bin/g++101 \
+	&& ln -s /usr/local/gcc-10.1.0/bin/gcc /usr/local/bin/gcc101 \
  	# go言語環境取得
+ 	&& cd /root/tmp \
  	&& wget https://redirector.gvt1.com/edgedl/go/go1.15.6.linux-amd64.tar.gz \
  	&& tar -C /usr/local -xzf go1.15.6.linux-amd64.tar.gz \
  	&& cd /root \
