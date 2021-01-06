@@ -18,7 +18,7 @@ RUN yum update -y \
 	&& mv apache-maven-3.6.3 /opt/maven \
 	&& rm -rf apache-maven-3.6.3-bin.tar.gz \
 	# git環境取得
- 	&& wget https://github.com/git/git/archive/v2.29.2.tar.gz \
+ 	&& wget https://github.com/git/git/archive/v2.30.0.tar.gz \
  	&& tar -zxvf v2.30.0.tar.gz \
  	&& cd git-2.30.0 \
  	&& make prefix=/usr/local all \
