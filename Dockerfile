@@ -5,6 +5,8 @@ COPY .bashrc /root/
 COPY .netrc /root/
 COPY .zshrc /root/
 
+ENV JAVA_HOME=/usr/lib/jvm/java
+
 RUN yum update -y \
 	&& yum groupinstall -y 'Development tools' \
 	&& yum install -y curl-devel expat-devel gettext-devel   openssl-devel zlib-devel perl-ExtUtils-MakeMaker wget java-1.8.0-openjdk.x86_64 ant libjpeg-devel zsh valgrind \
