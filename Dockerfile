@@ -5,7 +5,17 @@ COPY .bashrc /root/
 COPY .netrc /root/
 COPY .zshrc /root/
 
+ENV LANG=ja_JP.UTF-8
+ENV GOPATH=$HOME/gohome
+ENV GOBIN=/usr/local/go/bin
+ENV GOHOME=$HOME/gohome
+ENV PATH=$PATH:/usr/local/go/bin
+ENV LD_LIBRARY_PATH=./:/usr/local/gcc-10.1.0/lib64
+ENV TZ='Asia/Tokyo'
+ENV M2_HOME=/opt/maven
+ENV PATH=${M2_HOME}/bin:${PATH}
 ENV JAVA_HOME=/usr/lib/jvm/java
+ENV JAVA_TOOL_OPTIONS=-Dfile.encoding=UTF8
 
 RUN yum update -y \
 	&& yum groupinstall -y 'Development tools' \
