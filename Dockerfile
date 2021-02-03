@@ -6,9 +6,9 @@ COPY .netrc /root/
 COPY .zshrc /root/
 
 ENV LANG=ja_JP.UTF-8
-ENV GOPATH=$HOME/gohome
+ENV GOPATH=/root/gohome
 ENV GOBIN=/usr/local/go/bin
-ENV GOHOME=$HOME/gohome
+ENV GOHOME=/root/gohome
 ENV PATH=$PATH:/usr/local/go/bin
 ENV LD_LIBRARY_PATH=./:/usr/local/gcc-10.1.0/lib64
 ENV TZ='Asia/Tokyo'
